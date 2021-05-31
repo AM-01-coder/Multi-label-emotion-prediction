@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+.footer{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: transparent;
+  color: white;
+  text-align: center; }
+
+.grid-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;}
+
+.wrapper {
+    text-align: center;}
+
+.predict_button {border-radius: 25%;}
+
+h1.a {
+  text-align: center;
+  color: white;}
+  
+</style>
+    <title>Multi-label Emotion Prediction System</title>
+    <meta charset="utf-8">
+
+    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500" rel="stylesheet">
+    <link rel="stylesheet" href="/static/home/css/style.css">
+
+    <!-- searchbox css -->
+    <link rel="stylesheet" href="/static/type/css/searchbox.css">
+
+    <!-- insertion templates -->
+       
+  	<link rel="stylesheet" href="/static/insertion/css/tooplate-style.css">
+  	<link rel="stylesheet" href="/static/insertion/css/fontawesome-all.min.css"> 
+
+    <!-- Custom CSS -->
+    <link href="/static/lapsus/css/style.css" rel="stylesheet">
+
+
+</head>
+<body 
+<div class="full-height" style="background-image:url(/static/home/images/GUI_Emotion.jpg);">
+  <section class="ftco-cover"  id="section-home">
+    <div class="container">
+      <div class="row align-items-center ftco-vh-100">
+        <div class="col-md-12">
+          <div class="ftco-heading mb-5"><h1 class="a">Multi-label Emotion Prediction System</h1></div>
+            <div class="grid-container">
+
+              <div class="grid-child left">
+                <h1 style="color:white;">Project Aim</h1>
+                <p>The main aim of Multi-label Emotion Prediction System is to predict one or more (most dominating) Emotions in a given English text from a pre-defined set of Emotions (Anger, Anticipation, Disgust, Fear, Joy, Love, Optimism, Pessimism, Sadness, Surprise, Trust or Neutral).</p>
+                <br><p><strong>Input:</strong> An English Text</p>
+                <p><strong>Output:</strong> Emotion(s)</p></br>
+                <p><strong>Example - Input and Output</strong></p>
+                <p><strong>Input: </strong>The best medicine of the world is: Love and Respect the Humanity to Please Allah.</p>
+                <p><strong>Output: </strong>Joy, Love, Optimism</p>
+                <br><br><br>    
+              </div>
+              
+              <div class="grid-child right">
+                <br><br>
+                <div class="page" >
+                  <div class="page__demo">   
+                    <form action="{{ url_for('predict')}}" class="search" method="POST">
+                      <div class="a-field search__field">
+                        <input type="text" id="emotion_typed_tweet" name="id" class="r-text-field a-field__input search__input" placeholder=" " required>
+                        <label class="a-field__label-wrap search__hint" for="query">
+                        <span class="a-field__label">Enter an English Text for Emotion Prediction</span>
+                        </label>        
+                        <div class="wrapper">
+                            <button class="predict_button  " onclick="myFunction()" style="border:2px solid white; margin-top: 10px; background-color: transparent; color: white;">Predict Emotions</button>
+                        </div>
+                      </div></form>
+                   </div>
+                 </div>
+                <br><br>
+                
+                <p class="h5 ftco-subheading mb-5"><strong>Input (Text): &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : </strong><i> {{ text1 }}</i>
+                <br><strong>Output (Emotions): </strong><i>{{ prediction_text1 }}</i></p>
+          </div>
+        </div>  
+     </div> 
+   </div> 
+</section>
+
+    <!-- END section -->
+    
+
+
+<div class="footer">
+  <a>Copyrights © 2021 | Ahmad Mahmood, Nazia Jehan, Iqra Ameer, Dr. Rao Muhammad Adeel Nawab | All Rights Reserved</a>
+</div>
+
+  
+</div>
+  </body>
+</html>
